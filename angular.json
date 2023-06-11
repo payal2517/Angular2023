@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Restaurants": {
+    "RestaurentApp": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/restaurants",
+            "outputPath": "dist/RestaurentApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Restaurants:build:production"
+              "browserTarget": "RestaurentApp:build:production"
             },
             "development": {
-              "browserTarget": "Restaurants:build:development"
+              "browserTarget": "RestaurentApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Restaurants:build"
+            "browserTarget": "RestaurentApp:build"
           }
         },
         "test": {
@@ -97,5 +101,9 @@
         }
       }
     }
+  },
+  "defaultProject": "RestaurentApp",
+  "cli": {
+    "analytics": false
   }
 }
